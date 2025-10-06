@@ -26,7 +26,7 @@ Split reads (those with `N` in their CIGAR strings) indicate intron locations. T
 3. Detects split reads using `N` in the CIGAR string.  
 4. Calculates each intron’s start and end positions.  
 5. Groups identical junctions and counts supporting reads.  
-6. Matches junctions to genes and writes results to `XXXXXXXX.txt` (replace with your student number).  
+6. Matches junctions to genes and writes results to a table 
    Each gene’s junctions are followed by a blank line.
 
 ---
