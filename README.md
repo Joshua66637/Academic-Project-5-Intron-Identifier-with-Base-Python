@@ -2,7 +2,7 @@
 
 ## Overview
 This project identifies **splice junctions** from RNA-seq alignments in **SAM** format and associates them with genes using a provided annotation table.  
-Split reads (those with `N` in their CIGAR strings) indicate intron locations. The script counts how many reads support each junction and outputs all unique junctions per gene.
+Split reads are caused due to introns in the Genomic Reference Sequence which are absent in the mRNA. These read span junctions and have `N`s in their CIGAR strings. These indicate intron locations. The script counts how many reads support each junction and outputs all unique junctions per gene.
 
 ---
 
@@ -19,24 +19,8 @@ Split reads (those with `N` in their CIGAR strings) indicate intron locations. T
 
 ---
 
-## How the Script Works
-
-1. Skips SAM header lines (`@`).  
-2. Keeps only uniquely aligned reads (`NH:i:1`).  
-3. Detects split reads using `N` in the CIGAR string.  
-4. Calculates each intron’s start and end positions.  
-5. Groups identical junctions and counts supporting reads.  
-6. Matches junctions to genes and writes results to a table 
-   Each gene’s junctions are followed by a blank line.
-
----
-
 ## Usage
 
 ```
-python3 myScript.py mySamFile.sam myInputTable.txt
-```
-Example:
-```
-python3 myScript.py alignments.sam genes.txt
+python3 IntronFinder.py Samfile.sam GeneLocationTable.txt
 ```
