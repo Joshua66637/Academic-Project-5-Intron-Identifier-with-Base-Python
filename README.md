@@ -1,4 +1,5 @@
-# Split Read Junction Extractor
+# Project Title: Split Read Junction Extractor
+## Course: Programming and Databases (MSc Bioinformatics) 
 
 ## Overview
 This project identifies **splice junctions** from RNA-seq alignments in **SAM** format and associates them with genes using a provided annotation table.  
